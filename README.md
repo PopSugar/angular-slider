@@ -3,7 +3,7 @@ angular-slider
 
 NOTE: Don't fork me. This fork was created to add ng-change support.  Best practices suggest using ng-change rather than wiring up a custom watch statement.  I've issued a pull request to the PopSugar/angular-slider repo to integrate this.  
 
-            <slider floor="100" ceiling="1000" step="50" precision="2" ng-model="item.cost" ng-change="onSlide"></slider>
+            <slider floor="100" ceiling="1000" step="50" precision="2" ng-model="item.cost" ng-change="onSlide()"></slider>
 ====
 
 Slider directive implementation for AngularJS, without jQuery dependencies. Requires AngularJS v1.1.4 or higher (optional isolate scope bindings support).
