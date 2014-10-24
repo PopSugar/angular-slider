@@ -1,6 +1,8 @@
 angular-slider
 ==============
 
+NOTE: This was forked to add missing support for ng-change support (best practices requirement for wiring an action to a change). Issued a pull request to the PopSugar/angular-slider repo.  
+
 Slider directive implementation for AngularJS, without jQuery dependencies. Requires AngularJS v1.1.4 or higher (optional isolate scope bindings support).
 
 ### Example:
