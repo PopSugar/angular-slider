@@ -85,11 +85,11 @@ sliderDirective = ($timeout) ->
       scope.local = {}
       scope.local[low] = scope[low]
       scope.local[high] = scope[high]
-
-      scope.$watch "ngModel", (->
-        scope.ngChange()
-        return
-      ), true
+      if typeof scope.ngChange is 'function'
+        scope.$watch "ngModel", (->
+          scope.ngChange()
+          return
+        ), true
 
       boundToInputs = false
       ngDocument = angularize document
