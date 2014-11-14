@@ -50,6 +50,7 @@ sliderDirective = ($timeout) ->
     ngModel:      '=?'
     ngModelLow:   '=?'
     ngModelHigh:  '=?'
+    ngChange:     '&'
   template: '''
     <div class="bar"><div class="selection"></div></div>
     <div class="handle low"></div><div class="handle high"></div>
@@ -84,6 +85,11 @@ sliderDirective = ($timeout) ->
       scope.local = {}
       scope.local[low] = scope[low]
       scope.local[high] = scope[high]
+      if typeof scope.ngChange is 'function'
+        scope.$watch "ngModel", (->
+          scope.ngChange()
+          return
+        ), true
 
       boundToInputs = false
       ngDocument = angularize document
