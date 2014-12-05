@@ -148,7 +148,7 @@
               }
               if ((_ref2 = scope.values) != null ? _ref2.length : void 0) {
                 if (scope.ceiling == null) {
-		  scope.ceiling = scope.values[scope.values.length - 1];
+                  scope.ceiling = scope.values[scope.values.length - 1];
                 }
               }
               scope.local[low] = scope[low];
