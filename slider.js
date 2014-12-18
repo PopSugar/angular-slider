@@ -183,13 +183,13 @@
               setPointers = function() {
                 var newHighValue, newLowValue;
                 offset(ceilBub, pixelize(barWidth - width(ceilBub)));
-                newLowValue = percentValue(scope.local[low]);
+                newLowValue = Math.min(100,Math.max(0,percentValue(scope.local[low])));
                 offset(minPtr, percentToOffset(newLowValue));
                 offset(lowBub, pixelize(offsetLeft(minPtr) - (halfWidth(lowBub)) + handleHalfWidth));
                 offset(selection, pixelize(offsetLeft(minPtr) + handleHalfWidth));
                 switch (true) {
                   case range:
-                    newHighValue = percentValue(scope.local[high]);
+                    newHighValue = Math.min(100,Math.max(0,percentValue(scope.local[high])));
                     offset(maxPtr, percentToOffset(newHighValue));
                     offset(highBub, pixelize(offsetLeft(maxPtr) - (halfWidth(highBub)) + handleHalfWidth));
                     return selection.css({
