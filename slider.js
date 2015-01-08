@@ -230,6 +230,7 @@
                   return scope.$apply();
                 };
                 onMove = function(event) {
+                  scope.$parent.$eval(attributes.ngChange);	
                   var eventX, newOffset, newPercent, newValue, _ref2, _ref3;
                   eventX = event.clientX || ((_ref2 = event.touches) != null ? (_ref3 = _ref2[0]) != null ? _ref3.clientX : void 0 : void 0) || 0;
                   newOffset = eventX - element[0].getBoundingClientRect().left - handleHalfWidth;
