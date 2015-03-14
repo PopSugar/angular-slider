@@ -85,7 +85,7 @@
 
   sliderDirective = function($timeout) {
     return {
-      restrict: 'E',
+      restrict: 'EA',
       scope: {
         floor: '@',
         ceiling: '@',
@@ -190,13 +190,13 @@
               setPointers = function() {
                 var newHighValue, newLowValue;
                 offset(ceilBub, pixelize(barWidth - width(ceilBub)));
-                newLowValue = percentValue(scope.local[low]);
+                newLowValue = percentValue(scope.local[low]) || 0;
                 offset(minPtr, pixelsToOffset(newLowValue));
                 offset(lowBub, pixelize(offsetLeft(minPtr) - (halfWidth(lowBub)) + handleHalfWidth));
                 offset(selection, pixelize(offsetLeft(minPtr) + handleHalfWidth));
                 switch (true) {
                   case range:
-                    newHighValue = percentValue(scope.local[high]);
+                    newHighValue = percentValue(scope.local[high]) || 100;
                     offset(maxPtr, pixelsToOffset(newHighValue));
                     offset(highBub, pixelize(offsetLeft(maxPtr) - (halfWidth(highBub)) + handleHalfWidth));
                     return selection.css({
@@ -302,7 +302,11 @@
               w = watchables[_j];
               scope.$watch(w, updateDOM, true);
             }
-            return window.addEventListener('resize', updateDOM);
+            if (window.attachEvent) {
+                return window.attachEvent('resize', updateDOM);
+            } else {
+                return window.addEventListener('resize', updateDOM);
+            }
           }
         };
       }
