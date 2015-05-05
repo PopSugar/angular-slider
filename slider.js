@@ -208,7 +208,7 @@
                     });
                   case attributes.highlight === 'left':
                     selection.css({
-                      width: pixelsToOffset(newLowValue)
+                      width: pixelsToOffset(newLowValue + 1)
                     });
                     return offset(selection, 0);
                 }
