@@ -302,6 +302,11 @@
               w = watchables[_j];
               scope.$watch(w, updateDOM, true);
             }
+
+            scope.$on('refreshSlider', function(e,a) {
+              $timeout(updateDOM);
+            });
+
             return window.addEventListener('resize', updateDOM);
           }
         };
