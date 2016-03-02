@@ -56,6 +56,7 @@ sliderDirective = ($timeout) ->
     ngModel:      '=?'
     ngModelLow:   '=?'
     ngModelHigh:  '=?'
+    ngSlideStop:  '&ngSlideStop'
     change:       '&'
   template: '''
     <div class="bar"><div class="selection"></div></div>
@@ -216,6 +217,8 @@ sliderDirective = ($timeout) ->
             setPointers()
             event.stopPropagation()
             event.preventDefault()
+            ngDocument.bind events.end, ->
+              scope.ngSlideStop();
             ngDocument.bind events.move, onMove
             ngDocument.bind events.end, onEnd
           handle.bind events.start, onStart
