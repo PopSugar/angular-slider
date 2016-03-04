@@ -221,8 +221,8 @@
                 onEnd = function() {
                   bubble.removeClass('active');
                   handle.removeClass('active');
-                  ngDocument.unbind(events.move);
-                  ngDocument.unbind(events.end);
+                  ngDocument.unbind(events.move, onMove);
+                  ngDocument.unbind(events.end, onEnd);
                   if (scope.dragstop) {
                     scope[high] = scope.local[high];
                     scope[low] = scope.local[low];
