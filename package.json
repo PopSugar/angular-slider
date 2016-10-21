@@ -11,7 +11,11 @@
     "slider"
   ],
   "devDependencies": {
-    "coffee-script": "latest"
+    "coffee-script": "^1.7.1",
+    "node-sass": "^3.10.1"
+  },
+  "scripts": {
+    "build": "make"
   },
   "author": "POPSUGAR",
   "license": "MIT",

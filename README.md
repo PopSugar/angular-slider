@@ -42,6 +42,17 @@ You can then use it in your templates like so:
         </body>
     </html>
 
+### Build:
+
+In order to build it *(after all the dependencies are installed with `npm install`)*:
+
+```
+  $ make
+
+  //or
+
+  $ npm run build
+```
 
 ### Known issues:
 
