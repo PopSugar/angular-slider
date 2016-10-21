@@ -12,7 +12,8 @@
   ],
   "devDependencies": {
     "coffee-script": "^1.7.1",
-    "node-sass": "^3.10.1"
+    "node-sass": "^3.10.1",
+    "uglifyjs": "^2.4.10"
   },
   "scripts": {
     "build": "make"
