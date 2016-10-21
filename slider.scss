@@ -41,9 +41,10 @@ slider, [slider] {
         width: 8px;
         height: 8px;
         position: absolute;
-        top: 6px;
-        left: 6px;
+        top: 50%;
+        left: 50%;
         border-radius: 100%;
+        transform: translate(-50%, -50%);
 
         &:hover {
           background-color: #000;
